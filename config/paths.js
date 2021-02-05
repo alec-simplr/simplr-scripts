@@ -1,12 +1,16 @@
-const path = require('path')
+const path = require('path');
+const fs = require('fs');
+
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = (relativePath) => {
+  const pathExists = fs.existsSync(`${appDirectory}/${relativePath}`);
+  return pathExists ? path.resolve(appDirectory, relativePath) : undefined;
+};
 
 module.exports = {
-  // Source files
-  src: path.resolve(__dirname, '../src'),
-
-  // Production build files
-  build: path.resolve(__dirname, '../dist'),
-
-  // Static files that get copied to build folder
-  public: path.resolve(__dirname, '../public'),
+  src: resolveApp('src'),
+  build: resolveApp('dist'),
+  public: resolveApp('public'),
+  appEnv: resolveApp('.env'),
+  appModuleFederationConfig: resolveApp('moduleFederationConfig.js'),
 }
