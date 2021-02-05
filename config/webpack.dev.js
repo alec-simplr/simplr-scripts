@@ -18,6 +18,10 @@ const devConfig = {
     historyApiFallback: {
       index: "index.html",
     },
+    compress: true,
+    noInfo:   true,
+    open:     true,
+    overlay:  true,
   },
   plugins: [
     appModuleFederationConfig && new ModuleFederationPlugin(appModuleFederationConfig),
