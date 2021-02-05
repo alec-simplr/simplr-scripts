@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = (relativePath) => {
@@ -8,10 +8,10 @@ const resolveApp = (relativePath) => {
 };
 
 module.exports = {
-  src: resolveApp('src'),
-  build: resolveApp('dist'),
-  public: resolveApp('public'),
-  appEnv: resolveApp('.env'),
-  appModuleFederationConfig: resolveApp('moduleFederationConfig.js'),
-  appPackageJson: resolveApp('package.json'),
-}
+  src: resolveApp("src"),
+  build: resolveApp("dist"),
+  public: resolveApp("public"),
+  appEnv: resolveApp(".env"),
+  appModuleFederationConfig: resolveApp("moduleFederationConfig.js"),
+  appPackageJson: resolveApp("package.json"),
+};
