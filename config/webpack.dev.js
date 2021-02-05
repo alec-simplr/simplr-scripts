@@ -10,6 +10,7 @@ const { appModuleFederationConfig } = require('./paths');
 
 const devConfig = {
   mode: "development",
+  devtool: 'inline-source-map',
   output: {
     publicPath: `http://localhost:${environment.port}/`,
   },
@@ -22,6 +23,9 @@ const devConfig = {
     noInfo:   true,
     open:     true,
     overlay:  true,
+    hot:      true,
+    // TODO: enable one custom messaging output in start script is confiugred
+    // quiet:    true,
   },
   plugins: [
     appModuleFederationConfig && new ModuleFederationPlugin(appModuleFederationConfig),
