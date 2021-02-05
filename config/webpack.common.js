@@ -31,6 +31,7 @@ module.exports = {
     // enables use of .env file, not supported by default in webpack 5
     new Dotenv(),
   ],
+  // provides fallback option for node modules that aren't avialable in browser
   resolve: {
     fallback: {
       path: false,
