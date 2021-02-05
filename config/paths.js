@@ -13,4 +13,5 @@ module.exports = {
   public: resolveApp('public'),
   appEnv: resolveApp('.env'),
   appModuleFederationConfig: resolveApp('moduleFederationConfig.js'),
+  appPackageJson: resolveApp('package.json'),
 }

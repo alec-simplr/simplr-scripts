@@ -10,31 +10,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            // This is a feature of `babel-loader` for webpack (not Babel itself).
-            // It enables caching results in ./node_modules/.cache/babel-loader/
-            // directory for faster rebuilds.
-            cacheDirectory: true,
-            cacheCompression: false,
-            compact: environment.isEnvProduction,
-            babelrc: false,
-            configFile: false,
-            presets: [
-              ["@babel/preset-react", { runtime: "automatic" }],
-              "@babel/preset-env",
-            ],
-            plugins: [
-              "@babel/plugin-transform-runtime",
-              // enables styled-components
-              "babel-plugin-styled-components",
-              "babel-plugin-macros",
-              // remove propTypes from prod build
-              environment.isEnvProduction && [
-                "babel-plugin-transform-react-remove-prop-types",
-                {
-                  removeImport: true,
-                },
-              ],
-            ].filter(Boolean),
+            ...require('./babel.config'),
           },
         },
       },
