@@ -18,15 +18,11 @@ module.exports = {
             compact: environment.isEnvProduction,
             babelrc: false,
             configFile: false,
-            presets: ["@babel/preset-react", "@babel/preset-env"],
+            presets: [
+              ["@babel/preset-react", { runtime: "automatic" }],
+              "@babel/preset-env",
+            ],
             plugins: [
-              // allows to write JSX without importing React
-              [
-                "@babel/plugin-transform-react-jsx",
-                {
-                  runtime: "automatic",
-                },
-              ],
               "@babel/plugin-transform-runtime",
               // enables styled-components
               "babel-plugin-styled-components",
