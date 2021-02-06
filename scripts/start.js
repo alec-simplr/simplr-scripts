@@ -8,7 +8,7 @@ module.exports = () => {
   process.env.BABEL_ENV = 'development';
   process.env.NODE_ENV = 'development';
 
-  // check if browserslist exists in package.json
+  // TODO: check if browserslist exists in package.json
 
   const config = require("../config/webpack.dev");
   const port = config.devServer.port;

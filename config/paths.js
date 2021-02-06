@@ -8,10 +8,11 @@ const resolveApp = (relativePath) => {
 };
 
 module.exports = {
-  src: resolveApp("src"),
+  appSrc: resolveApp("src"),
   build: resolveApp("dist"),
   public: resolveApp("public"),
   appEnv: resolveApp(".env"),
   appModuleFederationConfig: resolveApp("moduleFederationConfig.js"),
   appPackageJson: resolveApp("package.json"),
+  appSetupTestsFile: resolveApp('src/setupTests.js'),
 };
